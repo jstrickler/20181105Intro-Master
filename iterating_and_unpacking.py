@@ -12,3 +12,7 @@ people = [
     ('Larry', 'Page', 'Google'),
     ('Linus', 'Torvalds', 'Linux'),
 ]
+
+for first_name, last_name, product in people:
+    print(first_name, last_name)
+print()
