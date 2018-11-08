@@ -2,7 +2,11 @@
 
 from datetime import datetime, date, timedelta
 
-print("date.today():",date.today()) # <1>
+today = date.today()
+print("date.today():",) # <1>
+print(today.month, today.year)
+
+james_bd = date(2014, 8, 1)
 
 now = datetime.now()  # <2>
 print("now.day:", now.day)  # <3>

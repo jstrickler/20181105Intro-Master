@@ -1,0 +1,97 @@
+
+
+   "My heart is but a pitter-patter"
+
+
+
+   pat
+
+
+   p.t      "petunia"   "patter"  "plt" "drip;tumble"   "keep to the right"  "I'm a poet"
+
+   p[aeiou]t
+
+   p[a-z]t   p, any lower-case char, t
+
+   p[A-Za-z_]t
+
+   p[^ \t]t
+
+   \d  [0-9]
+   \s  [ \t\n\r\b\f]
+   \w  [a-zA-Z0-9_]
+
+   \D  [^0-9]
+   \S  [^ \t\n\r\b\f]
+   \W  [^a-zA-Z0-9_]
+
+#  basic:   . []
+#  PCRE     \d \s \w \D \S \W
+
+   # BASIC
+   ^   beginning of string (or line if Multiline flag)
+   $   end of string (or line if Multiline flag)
+   # PCRE
+   \b  beginning or end of word
+
+
+   "The red horse was mired in the mud, and redolent of leather"
+
+
+   \bred\b
+
+
+   \bred horse\b
+
+    ^wombat    "wombats are fun"
+              NOT "my favorite wombat"
+
+    wombat$   NOT "wombats are fun"
+              WILL "my favorite wombat"
+
+
+     ^wombat$    "wombat"
+
+
+    r"St\. Louis"    "St. Louis"
+
+    r"St. Louis"    "St. Louis"  "Sty Louis"   "St; Louis"
+
+    pat
+    p[aeiou]t
+    p[aeiou]+t   pat  peat poooooot  puaueiaueiot
+    p[aeiou]*t  pt pat ....
+
+    \d+-\d+-\d+   293-29-3923    919-616-2429    39023-3-93029320933
+
+    ^\d+$     string must be all digits
+
+    ^\s*\d+\s*$   same, but optional leading or trailing space
+
+    \d+\.\d+\.\d+\.\d+  MATCHES 122.3.14.98     NOT 389238.2390239.293029309.39203239
+
+    \b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b
+
+    BASIC
+    *  0 or more
+    +  1 or more
+    ?  0 or 1
+
+    EXTENDED
+    {n}  exactly n
+    {n,m} n through m
+    {n,} n or more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
