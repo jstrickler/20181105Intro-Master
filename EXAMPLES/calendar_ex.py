@@ -5,12 +5,12 @@ import calendar
 import webbrowser
 
 tcal = calendar.TextCalendar()  # <1>
-print(tcal.formatmonth(2012,1)) # <2>
+print(tcal.formatmonth(2018, 11)) # <2>
 
 print()
 
 hcal = calendar.HTMLCalendar()   # <3>
-formatted_month = hcal.formatmonth(2012,1)  # <4>
+formatted_month = hcal.formatmonth(2018,11)  # <4>
 
 html_file_name = 'sample_calendar.html'
 

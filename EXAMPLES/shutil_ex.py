@@ -26,3 +26,5 @@ print("{} exists:".format(new_folder), os.path.exists(new_folder))
 shutil.rmtree(new_folder) # <5>
 
 print("{} exists:".format(new_folder), os.path.exists(new_folder))
+
+print(shutil.disk_usage('.'))
