@@ -27,4 +27,4 @@ js = json.dumps(george, indent=8)  # <2>
 print(js)
 
 with open('george.json', 'w') as JS:  # <3>
-    json.dump(george, JS)  # <4>
+    json.dump(george, JS, indent=4)  # <4>
