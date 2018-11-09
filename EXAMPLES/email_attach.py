@@ -7,8 +7,8 @@ from email.mime.image import MIMEImage # <3>
 
 SMTP_SERVER = "smtpcorp.com"
 SMTP_PORT = 2525
-SMTP_USER = 'jstrickpython'
-SMTP_PWD = 'python(monty)'
+SMTP_USER = 'pythonclass'
+SMTP_PWD = 'pythonr0xx'
 
 SENDER = 'jstrick@mindspring.com'
 RECIPIENTS = ['jstrickler@gmail.com']
@@ -36,12 +36,12 @@ def add_text_attachment(file_name, message): # <7>
 def add_image_attachment(file_name, message): # <8>
     add_attachment(file_name, message, MIMEImage, 'rb')
 
-def add_attachment(file_name, message, mime_type, file_mode):
+def add_attachment(file_name, message, mime_class, file_mode):
     with open(file_name, file_mode) as file_in:  # <9>
         attachment_data = file_in.read()
 
     short_name = os.path.basename(file_name)
-    attachment = mime_type(attachment_data)  # <10>
+    attachment = mime_class(attachment_data)  # <10>
     attachment.add_header(
         'Content-Disposition', 'attachment', filename=short_name
     )

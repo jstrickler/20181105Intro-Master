@@ -1,10 +1,12 @@
 #!/usr/bin/env python
-import smtplib # <1>
+import smtplib  # <1>
+import getpass
 
-DEBUG = True # set to false for production
+DEBUG = True  # set to false for production
 
-smtp_user = 'jstrickpython'
-smtp_pwd = 'python(monty)'
+smtp_user = 'pythonclass'
+# smtp_pwd = 'pythonr0xx'
+smtp_pwd = getpass.getpass()
 
 sender = 'jstrick@mindspring.com'
 recipients = ['jstrickler@gmail.com']
@@ -13,17 +15,17 @@ Hello hello?
 Testing email from Python
 '''
 
-smtpserver = smtplib.SMTP("smtpcorp.com", 2525) # <2>
+smtpserver = smtplib.SMTP("smtpcorp.com", 2525)  # <2>
 smtpserver.login(smtp_user, smtp_pwd)  # <3>
-smtpserver.set_debuglevel(DEBUG) # <4>
+smtpserver.set_debuglevel(DEBUG)  # <4>
 
 try:
     smtpserver.sendmail(
         sender,
         recipients,
         msg
-    )   # <5>
-except Exception as e:
-    print("Unable to send mail:", e)
+    )  # <5>
+except smtplib.SMTPException as err:
+    print("Unable to send mail:", err)
 finally:
-    smtpserver.quit()   # <6>
+    smtpserver.quit()  # <6>
